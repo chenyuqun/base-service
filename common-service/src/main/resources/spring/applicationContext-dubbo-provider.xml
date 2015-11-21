@@ -15,6 +15,6 @@
    <dubbo:monitor protocol="registry"/>
     
     <!-- 热推缓存 -->     
-   <dubbo:service interface="com.zizaike.is..HanLPService" version="1.0.0" ref="hotRecommendRedisService"  group="${dubbo.group}" />  
-	<bean id="hotRecommendRedisService" class="com.zizaike.redis.service.impl.HotRecommendRedisServiceImpl" />
+   <dubbo:service interface="com.zizaike.is.common.HanLPService" version="1.0.0" ref="hanLPService"  group="${dubbo.group}" />  
+	<bean id="anLPService" class="com.zizaike.common.service.impl.HanLPServiceImpl" />
 </beans>
