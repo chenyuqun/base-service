@@ -12,7 +12,7 @@ package com.zizaike.common.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.hankcs.hanlp.HanLP;
-import com.zizaike.common.service.HanLPService;
+import com.zizaike.is.common.HanLPService;
 
 /**  
  * ClassName:HanLPServiceImpl <br/>  

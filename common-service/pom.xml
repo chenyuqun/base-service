@@ -96,9 +96,17 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.zizaike</groupId>
-			<artifactId>zizaike-core</artifactId>
-		</dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-entity</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-core</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-is</artifactId>
+			</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
 
 import com.zizaike.common.basetest.BaseTest;
+import com.zizaike.is.common.HanLPService;
 
 
 /**
