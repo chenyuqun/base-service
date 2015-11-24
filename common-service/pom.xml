@@ -96,17 +96,17 @@
 
 	<dependencies>
 		<dependency>
-				<groupId>com.zizaike</groupId>
-				<artifactId>zizaike-entity</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.zizaike</groupId>
-				<artifactId>zizaike-core</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.zizaike</groupId>
-				<artifactId>zizaike-is</artifactId>
-			</dependency>
+			<groupId>com.zizaike</groupId>
+			<artifactId>zizaike-entity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.zizaike</groupId>
+			<artifactId>zizaike-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.zizaike</groupId>
+			<artifactId>zizaike-is</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -261,5 +261,11 @@
 			<groupId>com.hankcs</groupId>
 			<artifactId>hanlp</artifactId>
 		</dependency>
+		<!-- 反射工具包 -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<!-- 反射工具包 -->
 	</dependencies>
 </project>
