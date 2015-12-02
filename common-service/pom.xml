@@ -45,19 +45,26 @@
 				<artifactId>maven-war-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<!-- 通过profile决定env, 根据env来试用不同的过滤文件来处理resources中的properties文件 -->
 		<filters>
 			<filter>src/main/resources/${env}</filter>
 		</filters>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<excludes>
-					<exclude>${excludePropertyFiles}</exclude>
-				</excludes>
-			</resource>
-		</resources>
+		  <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>${excludePropertyFiles}</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                     <include>spring/*</include>
+                    <include>${includePropertyFiles}</include>
+                </includes>
+            </resource>
+        </resources>
 	</build>
 
 	<profiles>
@@ -68,15 +75,15 @@
 			</activation>
 			<properties>
 				<env>logback.properties</env>
-				<excludePropertyFiles></excludePropertyFiles>
+				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
 		</profile>
 		<profile>
-			<!-- 正式环境 -->
 			<id>test</id>
 			<properties>
 				<env>logback.properties</env>
-				<excludePropertyFiles>filters/**/*</excludePropertyFiles>
+				<excludePropertyFiles>filters/*</excludePropertyFiles>
+				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
 		</profile>
 		<profile>
@@ -97,7 +104,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.zizaike</groupId>
+			<artifactId>zizaike-entity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.zizaike</groupId>
 			<artifactId>zizaike-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.zizaike</groupId>
+			<artifactId>zizaike-is</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -253,5 +268,11 @@
 			<groupId>com.hankcs</groupId>
 			<artifactId>hanlp</artifactId>
 		</dependency>
+		<!-- 反射工具包 -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<!-- 反射工具包 -->
 	</dependencies>
 </project>

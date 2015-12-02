@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.zizaike</groupId>
-  <artifactId>base-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>base-service</name>
-  <description>基础服务</description>
-<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zizaike</groupId>
+	<artifactId>base-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>base-service</name>
+	<description>基础服务</description>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<build.timestamp>${maven.build.timestamp}</build.timestamp>
 		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
@@ -31,7 +32,9 @@
 		<logback.version>1.0.13</logback.version>
 		<!-- mysql -->
 		<mysql.version>5.1.26</mysql.version>
-		<zizaike.core.version>1.0.1-RELEASE</zizaike.core.version>
+		<zizaike.core.version>1.0.2-RELEASE</zizaike.core.version>
+		<zizaike.entity.version>1.0.2-RELEASE</zizaike.entity.version>
+		<zizaike.is.version>1.0.2-RELEASE</zizaike.is.version>
 	</properties>
 	<developers>
 		<developer>
@@ -148,10 +151,20 @@
 	</build>
 	<dependencyManagement>
 		<dependencies>
-		<dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-entity</artifactId>
+				<version>${zizaike.entity.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>com.zizaike</groupId>
 				<artifactId>zizaike-core</artifactId>
 				<version>${zizaike.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-is</artifactId>
+				<version>${zizaike.is.version}</version>
 			</dependency>
 			<!-- spring start -->
 			<dependency>
@@ -413,11 +426,18 @@
 			</dependency>
 			<!-- SPRING DATA -->
 			<!-- 翻译服务 -->
-			 <dependency>
-            <groupId>com.hankcs</groupId>
-            <artifactId>hanlp</artifactId>
-            <version>portable-1.2.7</version>
-        </dependency>
+			<dependency>
+				<groupId>com.hankcs</groupId>
+				<artifactId>hanlp</artifactId>
+				<version>portable-1.2.7</version>
+			</dependency>
+			<!-- 反射工具包 -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.9.2</version>
+			</dependency>
+			<!-- 反射工具包 -->
 		</dependencies>
 	</dependencyManagement>
 	<modules>
