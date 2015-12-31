@@ -32,7 +32,7 @@ public class HanLPServiceTest extends BaseTest {
     HanLPService hanLPService;
     @Test(description = "简体转繁体")
     public void convertToTraditionalChinese()  {
-        String str = hanLPService.convertToTraditionalChinese("我是中ttettt: yes国人台湾有我我爱你");
+        String str = hanLPService.convertToTraditionalChinese("通化j夜市");
         System.err.println(str);
      /**   RecommendArea recommendArea = new RecommendArea();
         List<Recommend> recommends = new ArrayList<Recommend>();
@@ -93,7 +93,7 @@ public class HanLPServiceTest extends BaseTest {
     }
     @Test(description = "繁体转简体")
     public void convertToSimplifiedChinese()  {
-        String str = hanLPService.convertToSimplifiedChinese("「以後等妳當上皇后，就能買士多啤梨慶祝了」");
+        String str = hanLPService.convertToSimplifiedChinese("「以後等妳當上皇后，就能買士多啤梨慶祝了」，通化街夜市,宁夏夜市");
         System.err.println(str);
     }
   

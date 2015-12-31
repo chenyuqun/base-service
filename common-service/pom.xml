@@ -46,7 +46,7 @@
 			</plugin>
 		</plugins>
 		<filters>
-			<filter>src/main/resources/${env}</filter>
+			<filter>src/main/resources/filters/${env}</filter>
 		</filters>
 		  <resources>
             <resource>
@@ -61,6 +61,7 @@
                 <filtering>false</filtering>
                 <includes>
                      <include>spring/*</include>
+                     <include>hanlp.properties</include>
                     <include>${includePropertyFiles}</include>
                 </includes>
             </resource>
@@ -74,14 +75,14 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<env>logback.properties</env>
+				<env>dev.properties</env>
 				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
 		</profile>
 		<profile>
 			<id>test</id>
 			<properties>
-				<env>logback.properties</env>
+				<env>test.properties</env>
 				<excludePropertyFiles>filters/*</excludePropertyFiles>
 				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
