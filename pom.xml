@@ -33,8 +33,8 @@
 		<!-- mysql -->
 		<mysql.version>5.1.26</mysql.version>
 		<zizaike.core.version>1.0.2-RELEASE</zizaike.core.version>
-		<zizaike.entity.version>1.0.2-RELEASE</zizaike.entity.version>
-		<zizaike.is.version>1.0.2-RELEASE</zizaike.is.version>
+		<zizaike.entity.version>1.0.6-RELEASE</zizaike.entity.version>
+		<zizaike.is.version>1.0.5-RELEASE</zizaike.is.version>
 	</properties>
 	<developers>
 		<developer>
@@ -442,5 +442,6 @@
 	</dependencyManagement>
 	<modules>
 		<module>common-service</module>
+		<module>common-api</module>
 	</modules>
 </project>
