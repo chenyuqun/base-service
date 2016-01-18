@@ -10,6 +10,9 @@
 package com.zizaike.common.api.controller;  
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,13 +36,13 @@ import com.zizaike.is.common.HanLPService;
  * @see        
  */
 @Controller
-@RequestMapping("/common/translate")
-public class TranslationController {
+@RequestMapping("/common")
+public class TranslationController extends BaseAjaxController{
     @Autowired
     HanLPService hanLPService;
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "translate",method= RequestMethod.POST)
     @ResponseBody
-    public ResponseResult translate(@RequestParam("langue") Langue langue,@RequestParam("content") String content) throws ZZKServiceException {
+    public ResponseResult translate(@RequestParam Langue langue,@RequestParam String content) throws ZZKServiceException {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
         return responseResult;
