@@ -37,7 +37,7 @@ import com.zizaike.is.common.HanLPService;
 public class TranslationController {
     @Autowired
     HanLPService hanLPService;
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
     public ResponseResult translate(@RequestParam("langue") Langue langue,@RequestParam("content") String content) throws ZZKServiceException {
         ResponseResult responseResult = new ResponseResult();
