@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,7 +43,7 @@ public class TranslationController extends BaseAjaxController{
     HanLPService hanLPService;
     @RequestMapping(value = "translate",method= RequestMethod.POST)
     @ResponseBody
-    public ResponseResult translate(@RequestParam Langue langue,@RequestParam String content) throws ZZKServiceException {
+    public ResponseResult translate(@RequestParam Langue langue,@RequestBody String content) throws ZZKServiceException {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
         return responseResult;
