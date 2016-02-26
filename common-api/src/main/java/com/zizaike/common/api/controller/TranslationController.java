@@ -50,15 +50,15 @@ public class TranslationController extends BaseAjaxController{
     public ResponseResult translate(@RequestParam Langue langue,@RequestBody String content, HttpServletResponse response) throws ZZKServiceException {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
-//       String returnStr = "{\"code\":\"200\",\"info\":\""
-//               +responseResult.getInfo().toString()
-//               + "\"}";
-//        try {
-//            response.getWriter().write(returnStr);
-//        } catch (IOException e) {
-//            e.printStackTrace();  
-//        }
-        return responseResult;
+       String returnStr = "{\"code\":\"200\",\"info\":\""
+               +responseResult.getInfo().toString()
+               + "\"}";
+        try {
+            response.getWriter().write(returnStr);
+        } catch (IOException e) {
+            e.printStackTrace();  
+        }
+        return null;
     }
 }
   
