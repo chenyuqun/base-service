@@ -11,8 +11,9 @@ package com.zizaike.common.api.controller;
 
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.zizaike.core.bean.ResponseResult;
 import com.zizaike.core.framework.exception.ZZKServiceException;
 import com.zizaike.entity.common.Langue;
@@ -50,9 +50,11 @@ public class TranslationController extends BaseAjaxController{
     public ResponseResult translate(@RequestParam Langue langue,@RequestBody String content, HttpServletResponse response) throws ZZKServiceException {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
-        
+       String returnStr = "{\"code\":\"200\",\"info\":\""
+               +responseResult.getInfo().toString()
+               + "\"}";
         try {
-            response.getWriter().write(responseResult.getInfo().toString());
+            response.getWriter().write(returnStr);
         } catch (IOException e) {
             e.printStackTrace();  
         }
