@@ -16,6 +16,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,16 +45,19 @@ import com.zizaike.is.common.HanLPService;
 @Controller
 @RequestMapping("/common")
 public class TranslationController extends BaseAjaxController{
+    protected  Logger LOG = LoggerFactory.getLogger(TranslationController.class);
     @Autowired
     HanLPService hanLPService;
     @RequestMapping(value = "translate",method= RequestMethod.POST)
     @ResponseBody
     public ResponseResult translate(@RequestParam Langue langue,@RequestBody String content, HttpServletResponse response) throws ZZKServiceException {
+       LOG.debug("request conten{}",content);
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
        String returnStr = "{\"code\":\"200\",\"info\":\""
                +responseResult.getInfo().toString()
                + "\"}";
+       LOG.debug("response conten{}",returnStr);
         try {
             response.getWriter().write(returnStr);
         } catch (IOException e) {
