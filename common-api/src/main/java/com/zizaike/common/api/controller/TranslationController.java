@@ -54,16 +54,7 @@ public class TranslationController extends BaseAjaxController{
        LOG.debug("request conten{}",content);
         ResponseResult responseResult = new ResponseResult();
         responseResult.setInfo(hanLPService.translate(langue, content));
-       String returnStr = "{\"code\":\"200\",\"info\":\""
-               +responseResult.getInfo().toString()
-               + "\"}";
-       LOG.debug("response conten{}",returnStr);
-        try {
-            response.getWriter().write(returnStr);
-        } catch (IOException e) {
-            e.printStackTrace();  
-        }
-        return null;
+        return responseResult;
     }
 }
   
