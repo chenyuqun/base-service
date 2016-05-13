@@ -17,4 +17,6 @@
     <!-- 热推缓存 -->     
    <dubbo:service interface="com.zizaike.is.common.HanLPService" version="1.0.0" ref="hanLPService"  group="${dubbo.group}" />  
 	<bean id="hanLPService" class="com.zizaike.common.service.impl.HanLPServiceImpl" />
+	<dubbo:service interface="com.zizaike.is.common.SMSService" version="1.0.0" ref="smsService"  group="${dubbo.group}" />
+   <bean id="smsService" class="com.zizaike.common.service.impl.SMSServiceImpl" />
 </beans>

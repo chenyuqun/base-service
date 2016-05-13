@@ -16,4 +16,5 @@
      <dubbo:monitor protocol="registry"/>
       <!-- 翻译服务 -->
     <dubbo:reference id="hanLPService" interface="com.zizaike.is.common.HanLPService" version="1.0.0" group="${dubbo.group}"  check="false"/>
+    <dubbo:reference id="smsService" interface="com.zizaike.is.common.SMSService" version="1.0.0" group="${dubbo.group}" check="false"/>
 </beans>

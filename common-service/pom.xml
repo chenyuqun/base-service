@@ -16,6 +16,9 @@
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 		<excludePropertyFiles></excludePropertyFiles>
 		<project.build.finalname>common-service</project.build.finalname>
+		<zizaike.core.version>1.0.8-RELEASE</zizaike.core.version>
+		<zizaike.entity.version>1.0.16-RELEASE</zizaike.entity.version>
+		<zizaike.is.version>1.0.16-RELEASE</zizaike.is.version>
 	</properties>
 	<build>
 		<finalName>${project.build.finalname}</finalName>
@@ -103,18 +106,21 @@
 	</profiles>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.zizaike</groupId>
-			<artifactId>zizaike-entity</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.zizaike</groupId>
-			<artifactId>zizaike-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.zizaike</groupId>
-			<artifactId>zizaike-is</artifactId>
-		</dependency>
+<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-core</artifactId>
+				<version>${zizaike.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-entity</artifactId>
+				<version>${zizaike.entity.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zizaike</groupId>
+				<artifactId>zizaike-is</artifactId>
+				<version>${zizaike.is.version}</version>
+			</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -275,5 +281,10 @@
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 		<!-- 反射工具包 -->
+		    <dependency>
+      <groupId>com.twilio.sdk</groupId>
+      <artifactId>twilio-java-sdk</artifactId>
+      <version>6.3.0</version>
+    </dependency>
 	</dependencies>
 </project>
