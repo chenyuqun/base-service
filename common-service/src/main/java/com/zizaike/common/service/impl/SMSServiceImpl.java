@@ -29,15 +29,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class SMSServiceImpl implements SMSService  {
     protected final Logger LOG = LoggerFactory.getLogger(SMSServiceImpl.class);
-/*   @Value("${sms.from}")
+ @Value("${sms.from}")
     private String from ;
     @Value("${sms.ACCOUNT_SID}")
     private String ACCOUNT_SID;
     @Value("${sms.AUTH_TOKEN}")
-    private String AUTH_TOKEN;*/
-    static String from = "+14155992671";
+    private String AUTH_TOKEN;
+/*    static String from = "+12094565405";
     static String ACCOUNT_SID = "AC3d867eb6260b90c5b6834b6f7ef73422";
-    static String AUTH_TOKEN = "3aec6d2b4632e864b7386c84bde2a4a0";
+    static String AUTH_TOKEN = "3aec6d2b4632e864b7386c84bde2a4a0";*/
     
     @Override
     public String SendMessage(SMS sms){
