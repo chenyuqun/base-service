@@ -14,8 +14,8 @@ public class SMSServiceTest extends BaseTest{
     @Test(description = "test sendsms")
     public void sendMessage()throws TwilioRestException{
         SMS sms = new SMS();
-        sms.setMessage("你好www.baidu.com");
-        sms.setTo("12094565405");
+        sms.setMessage("你好 www.baidu.com");
+        sms.setTo("8618817930894");
         System.err.println(smsService.SendMessage(sms));
     }
 }
