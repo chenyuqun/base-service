@@ -46,7 +46,7 @@
 			</plugin>
 		</plugins>
 		<filters>
-			<filter>src/main/resources/filters/${env}</filter>
+			<filter>src/main/resources/${env}</filter>
 		</filters>
 		  <resources>
             <resource>
@@ -75,14 +75,14 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<env>dev.properties</env>
+				<env>logback.properties</env>
 				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
 		</profile>
 		<profile>
 			<id>test</id>
 			<properties>
-				<env>test.properties</env>
+				<env>logback.properties</env>
 				<excludePropertyFiles>filters/*</excludePropertyFiles>
 				<includePropertyFiles>logback.xml</includePropertyFiles>
 			</properties>
@@ -275,5 +275,10 @@
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 		<!-- 反射工具包 -->
+		<!-- logstash -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+		</dependency>
 	</dependencies>
 </project>
