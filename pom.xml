@@ -438,6 +438,12 @@
 				<version>1.9.2</version>
 			</dependency>
 			<!-- 反射工具包 -->
+			<!-- logstash -->
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>4.7</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
