@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.twilio.sdk.TwilioRestException;
 import com.zizaike.entity.common.SMS;
 import com.zizaike.is.common.SMSService;
-import com.zizaike.open.bastest.BaseTest;
+import com.zizaike.common.basetest.BaseTest;
 
 public class SMSServiceTest extends BaseTest{
 	@Autowired
